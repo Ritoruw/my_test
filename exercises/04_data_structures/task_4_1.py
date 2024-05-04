@@ -15,5 +15,5 @@
 
 """
 
-nat = "ip nat inside source list ACL interface GigabitEthernet0/1 overload"
+nat = "ip nat inside source list ACL interface GigabitEthernet0/2 overload"
 print(nat)
