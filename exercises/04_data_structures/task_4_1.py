@@ -15,5 +15,6 @@
 
 """
 
-nat = "ip nat inside source list ACL interface GigabitEthernet0/2 overload"
+nat = "ip nat inside source list ACL interface FastEthernet0/1 overload"
+nat =  nat.replace('FastEthernet','GigabitEthernet')
 print(nat)
