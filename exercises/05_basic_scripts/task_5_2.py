@@ -30,3 +30,25 @@ Out[1]: '11111111111111111111111111110000'
 
 Ограничение: Все задания надо выполнять используя только пройденные темы.
 """
+template  = '''
+Network:
+{0:<10} {1:<10} {2:<10} {3:<10}
+{0:08b}  {1:08b}  {2:08b}  {3:08b}
+Mask:
+/{4:}
+{5:<10} {6:<10} {7:<10} {8:<10}
+{5:08b}  {6:08b}  {7:08b}  {8:08b}
+'''
+inu = input("IP/mask:")
+ip, mask = inu.split('/')
+net = ip.split('.')
+mask1 = "1"*int(mask) + "0"*(32-int(mask))
+m1 = int(mask1[0:8],2)
+m2 = int(mask1[8:16],2)
+m3 = int(mask1[16:24],2)
+m4 = int(mask1[24:32],2)
+print(template.format(int(net[0]),int(net[1]),int(net[2]),int(net[3]),mask,m1,m2,m3,m4))
+
+
+
+
