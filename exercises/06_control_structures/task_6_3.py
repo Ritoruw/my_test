@@ -74,7 +74,7 @@ for intf, vlan in trunk.items():
         if command.endswith("trunk allowed vlan"):
             for l in vlan[1:]:
                 q.append(int(l))
-            q = str(q).strip('[]')
+            q = str(q).strip('[]').replace(' ','')
             if vlan[0] == 'del':
 #                 a = vlan[1:]
                 print(f" {command} remove {q}")
