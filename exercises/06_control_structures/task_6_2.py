@@ -12,3 +12,15 @@
 
 Ограничение: Все задания надо выполнять используя только пройденные темы.
 """
+ip_addr=input('Введите IP-адрес:')
+ip = ip_addr.split('.')
+if (int(ip[0])>=1 and int(ip[0])<=223):
+    print('unicast')
+elif (int(ip[0])>=224 and int(ip[0])<=239):
+    print('multicast')
+elif (ip_addr == '255.255.255.255'):
+    print('local broadcast')
+elif (ip_addr == '0.0.0.0'):
+    print('unassigned')
+else:
+    print('unused')
