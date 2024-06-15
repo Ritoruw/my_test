@@ -16,4 +16,19 @@
 
 """
 
+from sys import argv
+
+filename = argv[1]
 ignore = ["duplex", "alias", "configuration"]
+
+with open(filename) as f:
+    for line in f:
+        if line[0] != '!':
+            # Проверяем, содержит ли строка хоть одно из игнорируемых слов
+            should_ignore = 0
+            for i in range(len(ignore)):
+                if ignore[i] in line:
+                    should_ignore = 1
+                    break
+            if should_ignore == 0:
+                print(line)

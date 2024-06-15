@@ -40,3 +40,22 @@
 Ограничение: Все задания надо выполнять используя только пройденные темы.
 
 """
+template = '''
+{:8}{:20}{:8}
+'''
+result = {}
+with open('CAM_table.txt') as f:
+    for line in f:
+        line_list  = line.strip(' ').split()
+        if bool(line_list) and line_list[0].isdigit():
+            vlan = line_list[0]
+            mac = line_list[1]
+            port = line_list[3]
+            if int(vlan) in result:
+                result[int(vlan)].append((mac, port))
+            else:
+                result[int(vlan)] = [(mac, port)]
+keys = sorted(result.keys())
+for vlan in keys:
+    for entry in result[vlan]:
+        print(template.format(str(vlan), entry[0], entry[1]))
