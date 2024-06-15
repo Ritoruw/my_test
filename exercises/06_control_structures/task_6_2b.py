@@ -24,6 +24,9 @@ while True:
             a = a + 1
     if ip_addr.count('.') != 3:
         a = a + 1
+    for k in ip_addr.split('.'):
+        if len(k) == 0:
+            a = a + 1
     if (a == 0):
         ip = ip_addr.split('.')
         for k in ip:

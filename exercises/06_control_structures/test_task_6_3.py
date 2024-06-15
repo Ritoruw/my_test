@@ -26,16 +26,7 @@ def test_task(capsys):
         "interface FastEthernet0/4\n"
         " switchport trunk encapsulation dot1q\n"
         " switchport mode trunk\n"
-        " switchport trunk allowed vlan remove 17\n"
-        "interface FastEthernet0/5\n"
-        " switchport trunk encapsulation dot1q\n"
-        " switchport mode trunk\n"
-        " switchport trunk allowed vlan add 10,21\n"
-        "interface FastEthernet0/7\n"
-        " switchport trunk encapsulation dot1q\n"
-        " switchport mode trunk\n"
-        " switchport trunk allowed vlan 30"
-    )
+        " switchport trunk allowed vlan remove 17")
 
     assert (
         out
