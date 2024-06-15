@@ -43,8 +43,9 @@ interface Ethernet0/3
 from sys import argv
 
 filename = argv[1]
+print(filename)
 
 with open(filename) as f:
     for line in f:
         if line[0] != '!':
-            print(line)     
+            print(line)

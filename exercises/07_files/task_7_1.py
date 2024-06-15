@@ -24,5 +24,5 @@ Outbound Interface    {}
 
 with open('ospf.txt') as f:
     for line in f:
-        line_list = line.split()
-        print(template.format(line_list[1],line_list[2],line_list[4],line_list[5],line_list[6]))
+        line_list = line.replace(',','').split()
+        print(template.format(line_list[1],line_list[2].strip('[]'),line_list[4],line_list[5],line_list[6]))
